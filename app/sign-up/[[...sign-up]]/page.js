@@ -1,4 +1,4 @@
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 import {
   Typography,
   AppBar,
@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function SignUpPage() {
   return (
     <Container maxWidth="100vw">
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "3f51b5" }}>
         <Toolbar>
           <Typography
             variant="h6"
@@ -42,9 +42,9 @@ export default function SignUpPage() {
         justifyContent="center"
       >
         <Typography variant="h4">
-            Sign In
+            Sign Up
         </Typography>
-        <SignIn/>
+        <SignUp/>
       </Box>
     </Container>
   );

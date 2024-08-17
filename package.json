@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.4.1",
     "@clerk/nextjs": "^5.3.1",
+    "@clerk/shared": "^2.5.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.7",
@@ -19,7 +21,8 @@
     "openai": "^4.55.7",
     "react": "^18",
     "react-dom": "^18",
-    "stripe": "^16.7.0"
+    "stripe": "^16.7.0",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "eslint": "^8",
