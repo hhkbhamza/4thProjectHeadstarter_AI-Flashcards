@@ -25,6 +25,8 @@ Guidelines for Creating Flashcards:
 
 10. **Review and Refinement**: Periodically review the flashcards to ensure they are accurate, up-to-date, and effective. Make adjustments based on user feedback or changes in the material.
 
+11. **Only generate 10 flashcards.
+
 Remember, the goal is to facilitate effective learning and retention of information through these flashcards.
 
 Return in the following JSON format 

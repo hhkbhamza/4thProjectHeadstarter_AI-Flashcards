@@ -1,8 +1,19 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { collection, doc, getDoc, writeBatch } from "firebase/firestore"; // Ensure these are imported
-import { Box, Button, Container, Paper, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActionArea,
+  CardContent,
+  Container,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 
 export default function Generate() {
@@ -94,27 +105,52 @@ export default function Generate() {
             rows={4}
             variant="outlined"
             sx={{
-                mb: 2
+              mb: 2,
             }}
           />
-          <Button variant="contained" color="primary" onClick={handleSubmit} fullWidth>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSubmit}
+            fullWidth
+          >
             Submit
           </Button>
         </Paper>
       </Box>
 
-
       {flashcards.length > 0 && (
-        <Box sx={{mt:4}}>
-            <Typography variant="h5">Flashcards Preview</Typography>
-            </Box>
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="h5">Flashcards Preview</Typography>
+          <Grid container spacing={3}>
+            {flashcards.map((flashcard, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card>
+                  <CardActionArea onClick={() => handleCardClick(index)}>
+                    <CardContent>
+                      <Box>
+                        <div>
+                          <div>
+                            <Typography
+                              variant="h5"
+                              component="div"
+                            >
+                              {flashcard.front}
+                            </Typography>
+                          </div>
+                        </div>
+                      </Box>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       )}
     </Container>
   );
 }
-
-
-
 
 // 'use client'
 // import { useRouter } from "next/navigation"
@@ -181,7 +217,7 @@ export default function Generate() {
 //         batch.set(userDocRef, {flashcards: [{name}]})
 //     }
 
-//     const colRef = collection(userDocRef, name) 
+//     const colRef = collection(userDocRef, name)
 //     flashcards.forEach((flashcard) => {
 //         const cardDocRef = doc(colRef)
 //         batch.set(cardDocRef, flashcard)
@@ -197,7 +233,7 @@ export default function Generate() {
 //     }}>
 //         <Typography variant="h4">Generate Flashcards</Typography>
 //         <Paper sx={{p: 4, width: '100%'}}>
-//             <TextField value={text} onChange={(e) => 
+//             <TextField value={text} onChange={(e) =>
 //         </Paper>
 //     </Box>
 // </Container>)
