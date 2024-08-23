@@ -128,14 +128,31 @@ export default function Generate() {
                 <Card>
                   <CardActionArea onClick={() => handleCardClick(index)}>
                     <CardContent>
-                      <Box>
+                      <Box
+                        sx={{
+                          perspective: "1000px",
+                          "& > div": {
+                            transition: "transform 0.6s",
+                            transformStyle: "preserve-3d",
+                            position: "relative",
+                            width: "100%",
+                            height: "200px",
+                            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+                            transform: flipped[index]
+                              ? "rotateY(180deg)"
+                              : "rotateY(0deg)",
+                          },
+                        }}
+                      >
                         <div>
                           <div>
-                            <Typography
-                              variant="h5"
-                              component="div"
-                            >
+                            <Typography variant="h5" component="div">
                               {flashcard.front}
+                            </Typography>
+                          </div>
+                          <div>
+                            <Typography variant="h5" component="div">
+                              {flashcard.back}
                             </Typography>
                           </div>
                         </div>
