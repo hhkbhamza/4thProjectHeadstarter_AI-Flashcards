@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <Container maxWidth="100vw">
       <Head>
-        <Title>Flashcard SaaS</Title>
+        <title>Flashcard SaaS</title>
         <meta name="description" content="Create flashcard from your text" />
       </Head>
 
